@@ -4,8 +4,8 @@
 ### js 事件循环机制
     https://juejin.im/post/59e85eebf265da430d571f89
 ### js 变量提升
+ 
 ###### 什么是变量提升
-
 ###### 变量提升的优先级
 https://github.com/yygmind/blog/issues/12
 
@@ -26,6 +26,11 @@ https://github.com/yygmind/blog/issues/12
      3. 闭包
      4. 脱离dom的引用     
      https://github.com/yygmind/blog/issues/16
+     https://www.w3cschool.cn/chromedevtools/8ko91oeg.html
+
+     如何使用chrome 分析内存泄漏问题
+     https://blog.csdn.net/c11073138/article/details/84700482
+
 
 ### js 浅拷贝和深拷贝的实现
  数组浅拷贝：splice(0), concat, ...(扩展运算符)
