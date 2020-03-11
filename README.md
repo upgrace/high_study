@@ -49,7 +49,8 @@ https://github.com/yygmind/blog/issues/12
         '[object RegExp]': 'regExp',
         '[object Undefined]': 'undefined',
         '[object Null]': 'null',
-        '[object Object]': 'object'
+        '[object Object]': 'object'，
+        '[object Symbol]': 'symbol'
       }
       return map[toString.call(obj)]
     }
