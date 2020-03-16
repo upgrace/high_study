@@ -133,7 +133,7 @@
 ##### 常用的方法及工作原理
 
 ###### 常用的方法
-###### CORS、iframe、script、代理、反代理
+###### CORS、jsonp、iframe、script、代理、反代理
        CORS: 定义: 跨域资源共享（ CORS ）机制允许 Web 应用服务器进行跨域访问控制，从而使跨域数据传输得以安全进行
              原理: 跨域资源共享标准新增了一组 HTTP 首部字段，允许服务器声明哪些源站通过浏览器有权限访问哪些资源
                   a)针对简单请求(get, post, head)直接请求(request 中带有origin字段)，response中带有access-control-allow-origin，根据  
@@ -141,3 +141,9 @@
                   b)需预检的请求(delete、put、connect、options、trace、patch)首先使用options方法发起一个预检请求到服务器，以获知服务器是否
                     允许该实际请求
                   说明: 一般跨域的请求是不允许携带身份凭证的,如果需要，服务器端的响应要携带 Access-Control-Allow-Credentials: true
+
+      jsonp：定义: 通过请求script标签实现跨域请求，然后在服务端输出JSON数据并执行回调函数
+             原理：1.首先在客户端注册一个callback方法，放到window对象上，然后把callback的名字（callbackFunction）传给服务器。
+                  2.服务器先生成 JOSN 数据。
+                  3.将 JOSN 数据直接以入参的方式，放置到 function 中，后生成了一段 js 语法的文档（如callbackFunction(JOSN),返回给客户端。
+                  4.客户端浏览器，将返回的JS标签插入DOM，解析script标签后，会执行callbackFunction(JOSN)
