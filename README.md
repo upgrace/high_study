@@ -158,20 +158,19 @@
 
 
 ###### 作用域链
-####### 定义：作用域链：当访问一个变量时，解释器会首先在当前作用域查找标示符，如果没有找到，就去父作用域找，直到找到该变量的标示符或者不在父作用域中
-####### 提示：作用域链和原型继承查找时的区别：
+      定义：作用域链：当访问一个变量时，解释器会首先在当前作用域查找标示符，如果没有找到，就去父作用域找，直到找到该变量的标示符或者不在父作用域中
+      提示：作用域链和原型继承查找时的区别：
               如果去查找一个普通对象的属性，但在当前对象和其原型中都找不到时，会返回undefined；但查找的属性在作用域链中不存在的话就会抛出ReferenceError。
 
 ##### 对象中 in，hasOwnproperty, Object.keys, Object.getOwnPropertyNames, Object.assign， Object.getOwnPropertySymbols, reflect.ownKeys
-####### in: 返回无论是实例自身及原型上的属性, 不包括symbol属性
-####### hasOwnproperty： 返回实例自身的属性，不包括symbol属性
-####### Object.keys: 返回实例自身可访问的属性，不包括symbol属性
-####### Object.getOwnProtertyName: 返回实例的所有属性，无论是否可访问
-####### JSON.stringify: 串化对象自身的可枚举的属性
-####### Object.assign: 复制对象自身的可枚举的属性
-####### Object.getOwnPropertySymbols: 对象自身的所有可枚举的symbol属性
-####### Reflect.ownKeys: 对象自身的所有属性，不管是否是symbol 也不管是否可枚举
-
+      in: 返回无论是实例自身及原型上的属性, 不包括symbol属性
+      hasOwnproperty： 返回实例自身的属性，不包括symbol属性
+      Object.keys: 返回实例自身可访问的属性，不包括symbol属性
+      Object.getOwnProtertyName: 返回实例的所有属性，无论是否可访问
+      JSON.stringify: 串化对象自身的可枚举的属性
+      Object.assign: 复制对象自身的可枚举的属性
+      Object.getOwnPropertySymbols: 对象自身的所有可枚举的symbol属性
+      Reflect.ownKeys: 对象自身的所有属性，不管是否是symbol 也不管是否可枚举
 
 #### 判断两值是否相等, ==, ===, Object.is()
     == 会强制内容转化
@@ -191,3 +190,6 @@
         enumerable: false,
         writable: true
     })
+#### 修改对象原型的方法 Object.setProperty, Object.create, [obj]._proto_
+
+#### ...: 解构赋值是一种浅拷贝，并且不是拷贝原型上的属性
