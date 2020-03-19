@@ -174,11 +174,16 @@
     === NaN 不等于 NaN，+0 等于 -0
     Object.is 解决了上述所有问题，通过ES5实现如下：
     Object.defineProperty(Object, 'is', {
-        if (x === y) {
-           // 针对 +0 不等于-0 的情况
-           return x !== 0 && 1 / x ！== 1 / y
-        }
-        // 针对 NaN的情况
-        
-        return x !== x && y !== y
+      value: function (x, y)  {
+          if (x === y) {
+               // 针对 +0 不等于-0 的情况
+               return x !== 0 && 1 / x ！== 1 / y
+            }
+            // 针对 NaN的情况
+
+            return x !== x && y !== y
+        },
+        configurable: true,
+        enumerable: false,
+        writable: true
     })
