@@ -167,3 +167,18 @@
 ####### hasOwnproperty： 返回实例上的属性
 ####### Object.keys: 返回实例上可访问的属性
 ####### Object.getOwnProtertyName: 返回实例的所有属性，无论是否可访问
+
+
+#### 判断两值是否相等, ==, ===, Object.is()
+    == 会强制内容转化
+    === NaN 不等于 NaN，+0 等于 -0
+    Object.is 解决了上述所有问题，通过ES5实现如下：
+    Object.defineProperty(Object, 'is', {
+        if (x === y) {
+           // 针对 +0 不等于-0 的情况
+           return x !== 0 && 1 / x ！== 1 / y
+        }
+        // 针对 NaN的情况
+        
+        return x !== x && y !== y
+    })
