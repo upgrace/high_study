@@ -211,17 +211,16 @@
      Tips: 尾调用优化只能在严格模式下使用, 因为尾递归会导致function中的arguments、caller失效；非严格模式下实现尾递归优化：
         function tco (f) {
           var value
-          var active = false; debugger
-          var accumulated = [];console.log(arguments);
+          var active = false;
+          var accumulated = [];
           return function accumulator () {
             accumulated.push(arguments)
-            debugger
             if (!active) {
               active = true;
               while (accumulated.length) {
                 value = f.apply(this, accumulated.shift());}
                 active = false;
-                return value;console.log(value, 'bbb');
+                return value;
             }
           }
         };
@@ -234,6 +233,25 @@
           }
         });
         sum(1, 10)
-##### let const 存在暂时性死区的说话
+####  let const 存在暂时性死区的说话
       原理: 只要进入当前作用域，所要使用的变量就己经存在，但是 不可获取，只有等到声明变量的那 一行代码出现 ， 才可以获取和使用该变量。
       作用：为了减少运行时的错误，防止在变量声明前使用变量
+
+#### 彻底冻结对象的函数：
+      var constantize = (obj) => {
+          Object.freeze(obj);
+          
+          Object.keys(obj).forEach((key, i) => {
+             if (typeof obj[key] === 'object') {
+                constantize(obj[key])
+             }
+          })
+      }
+ ##### ES5 中全局变量和顶层变量是一样的，ES6是可以区分的
+      说明: 在不同的运营环境中，顶层对象的实现是不一致的。
+      在浏览器中，顶层对象是 window,但 Node 和 Web Worker 没有 window。 
+      在浏览器和 Web Worker 中， self 也指向顶层对象，但是 Node 没有 self。 
+      在 Node 中，顶层对象是 global，但其他环境都不支持。
+      
+      垫片库： https://github.com/es-shims/globalThis
+      
