@@ -259,11 +259,11 @@
             :(typeof process === 'bject' && typeof require === 'function' && typeof global === 'object' )
             ? global 
             :this);
-            // 方法二
-            var getGlobal = function () {
-                if (typeof self !== 'undefined') { return self; )
-                if (typeof window !== 'undefined' ) { return window; ) 
-                if (typeof global !== 'undefined') { return global; )
-                throw new Error (’unable to locate global object ’);
-      
+        // 方法二
+        var getGlobal = function () {
+            if (typeof self !== 'undefined') { return self; )
+            if (typeof window !== 'undefined' ) { return window; ) 
+            if (typeof global !== 'undefined') { return global; )
+            throw new Error (’unable to locate global object ’);
+
       垫片库： https://github.com/es-shims/globalThis
