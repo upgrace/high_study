@@ -193,3 +193,19 @@
 #### 修改对象原型的方法 Object.setProperty, Object.create, [obj]._proto_
 
 #### ...: 解构赋值是一种浅拷贝，并且不是拷贝原型上的属性
+
+#### 尾调用: 
+     定义: 一个函数的最后是调用另外一个函数
+     优点: 不需要保留外部的调用帧，因为调用位置、内部变量都信息都不会用到了，直接将内部函数替代外城函数的调用帧即可
+     案例：递归函数容易引起内存泄漏，可以使用尾调用优化
+         function factorial (n) {
+            if (n === 1) return 1;
+            return n * factorial(n-1);
+         } 复杂度 o(n)
+         
+         function factorial (n, total) {
+            if (n === 1) return total;
+            
+            return factorial(n-1, n * total);
+         } 复杂度O(1)
+     Tips: 尾调用优化只能在严格模式下使用, 因为尾递归会导致function中的arguments、caller失效；非严格模式下
