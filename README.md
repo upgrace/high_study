@@ -208,4 +208,29 @@
             
             return factorial(n-1, n * total);
          } 复杂度O(1)
-     Tips: 尾调用优化只能在严格模式下使用, 因为尾递归会导致function中的arguments、caller失效；非严格模式下
+     Tips: 尾调用优化只能在严格模式下使用, 因为尾递归会导致function中的arguments、caller失效；非严格模式下实现尾递归优化：
+        function tco (f) {
+          var value
+          var active = false; debugger
+          var accumulated = [];console.log(arguments);
+          return function accumulator () {
+            accumulated.push(arguments)
+            debugger
+            if (!active) {
+              active = true;
+              while (accumulated.length) {
+                value = f.apply(this, accumulated.shift());}
+                active = false;
+                return value;console.log(value, 'bbb');
+            }
+          }
+        };
+
+        var sum= tco(function(x, y) {
+          if (y>0) {
+            return sum(x + 1, y - 1)
+          } else {
+            return x
+          }
+        });
+        sum(1, 10)
