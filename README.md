@@ -252,6 +252,18 @@
       在浏览器中，顶层对象是 window,但 Node 和 Web Worker 没有 window。 
       在浏览器和 Web Worker 中， self 也指向顶层对象，但是 Node 没有 self。 
       在 Node 中，顶层对象是 global，但其他环境都不支持。
+      简单实现：
+      // 方法一
+      (typeof window != = 'undefined'
+            ? window 
+            :(typeof process === 'bject' && typeof require === 'function' && typeof global === 'object' )
+            ? global 
+            :this);
+            // 方法二
+            var getGlobal = function () {
+                if (typeof self !== 'undefined') { return self; )
+                if (typeof window !== 'undefined' ) { return window; ) 
+                if (typeof global !== 'undefined') { return global; )
+                throw new Error (’unable to locate global object ’);
       
       垫片库： https://github.com/es-shims/globalThis
-      
