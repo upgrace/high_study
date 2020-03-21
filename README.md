@@ -270,6 +270,11 @@
 
 #### Array.from, Array.of
      Array.from 定义： 将类数组对象、可遍历对象转化为真正的数组
-                兼容性: const toArray = (() => {
-                            Array.from ? Array.from : (obj) => [].slice.call(obj)
-                        })();
+                兼容性: const toArray = (() => Array.from ? Array.from : obj => [].slice.call(obj))();
+                
+     Array.of  定义: 将一组值转化为数组， 有点类似Array(3)
+               区别： Array 只有一个参数的时候 会有歧义，定义的是生成数组的长度
+    
+     
+
+               
