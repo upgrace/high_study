@@ -267,3 +267,9 @@
             throw new Error (’unable to locate global object ’);
 
       垫片库： https://github.com/es-shims/globalThis
+
+#### Array.from, Array.of
+     Array.from 定义： 将类数组对象、可遍历对象转化为真正的数组
+                兼容性: const toArray = (() => {
+                            Array.from ? Array.from : (obj) => [].slice.call(obj)
+                        })();
