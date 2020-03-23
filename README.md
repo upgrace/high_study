@@ -274,7 +274,13 @@
                 
      Array.of  定义: 将一组值转化为数组， 有点类似Array(3)
                区别： Array 只有一个参数的时候 会有歧义，定义的是生成数组的长度
+#### 如何判断一个对象是数组：
+    instanceof: 利用原型链来判断，缺点：原型可以重新定义； 多个全局环境中的 Array.prototype 不相等
+    constructor: 实例的构造函数属性constructor指向构造函数 缺点： 多个全局环境中的 Array.prototype 不相等
+    Array.isArray(): 有兼容性问题
+    Object.prototype.toString.call(obj): 最常用的方法
     
-     
+    考虑到兼容性：
+    const isArray = (() => {Array.isArray ? Array.isArray ? (obj) => Object.prototype.toStirng.call(obj) === '[object, Array]'})();
       
                
