@@ -67,6 +67,9 @@
  
 数组、对象深拷贝: 
     1. JSON.parse(JSON.Stringfy(obj))
+      缺点：a) 无法处理循环引用问题
+           b) 无法拷贝特殊的对象，如 RegExp, Date, Set, Map 等 在序列化的时候会丢失
+           c) 无法拷贝函数
     2. 自己开发deepCopy方法
     
     function typeOf (obj) {
@@ -283,4 +286,11 @@
     考虑到兼容性：
     const isArray = (() => {Array.isArray ? Array.isArray ? (obj) => Object.prototype.toStirng.call(obj) === '[object, Array]'})();
       
+#### interator 便利器
+    定义: 为不同的数据结构提供统一的访问机制
+    具备接口的数据结构：Array, set, map, String, TypedArray, arguments, nodelist 对象
+    用途： for... of
+
+#### symbol 对象的应用 
+    
                
