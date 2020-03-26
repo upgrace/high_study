@@ -295,6 +295,40 @@
 
 ### generator 应用
      核心： 能够暂停和恢复执行任务，是其能实现异步任务的根本原因
-     
-    
+     应用： 将数组扁平化操作
+        function typeOf (obj) {
+          const toString = Object.prototype.toString
+          const map = {
+            '[object Boolean]': 'boolean',
+            '[object Number]': 'number',
+            '[object String]': 'string',
+            '[object Function]': 'function',
+            '[object Array]': 'array',
+            '[object Date]': 'date',
+            '[object RegExp]': 'regExp',
+            '[object Undefined]': 'undefined',
+            '[object Null]': 'null',
+            '[object Object]': 'object'，
+            '[object Symbol]': 'symbol',
+            '[object Set]': 'set',
+            '[object Map]': 'map'
+          }
+          return map[toString.call(obj)]
+        }
+ 
+          function* flat(n) {
+              function isArray(arr) {
+                return ['array', 'set'].includes(typeOf(arr))
+              }
+              if (isArray(n)) {
+                for (let i of n) {
+                  if (isArray(i)) {
+                    yield* flat(i)
+                  } else {
+                    yield i
+                  }
+                }
+              }
+            }
+  
                
