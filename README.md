@@ -354,6 +354,8 @@
 #### class的继承
     ES5 继承实质是先创造子类的实例对象this，再将父类的方法添加到this上。ES6的继承机制完全不同，先创造父类的实例对象this(所以必须先调用super方法),再用子类的构造函数修改this。
     
+    说明： 所以ES5无法获取原生构造函数的内部属性，所以不能继承原声函数
+    
     ES6 class 有两条继承链条： 
       子类的_proto_属性表示构造函数的继承，总是指向父类
       子类prototype 属性的_proto_属性表示方法的继承，总是指向父类的prototype
@@ -363,4 +365,27 @@
         return obj;
       }
      
+ #### 继承多个类- 使用Mixin模式实现将多个类的接口混入另一个类中
+ 
+    function mix (...mixins) {
+        class Mix {}
+        
+        for (let mixin of mixins) {
+            copyProperties(Mix, mixin)
+            copyProperties(Mix.prototype, mixin.prototype)
+        }
+        
+        return Mix
+    }
+    
+     function copyProperties (target, source) {
+        for (let key of Reflect.ownKeys(source)) {
+            if (key !== 'constructor' && key !== 'prototype' && key !== 'name') {
+                let desc = Object.getOwnPropertyDescriptor(source, key)
+                Object.defineProperty(target, key, desc)
+            }
+        }
+     }
+     
+     使用： classDistributeEdit extends mix(loggable, serialzable) {...}
      
