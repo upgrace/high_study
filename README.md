@@ -353,3 +353,14 @@
      
 #### class的继承
     ES5 继承实质是先创造子类的实例对象this，再将父类的方法添加到this上。ES6的继承机制完全不同，先创造父类的实例对象this(所以必须先调用super方法),再用子类的构造函数修改this。
+    
+    ES6 class 有两条继承链条： 
+      子类的_proto_属性表示构造函数的继承，总是指向父类
+      子类prototype 属性的_proto_属性表示方法的继承，总是指向父类的prototype
+      
+      Object.setPrototypeOf = function (obj, proto) {
+        obj._proto_ = proto;
+        return obj;
+      }
+     
+     
