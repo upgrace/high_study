@@ -399,5 +399,7 @@
            class myClass extends myMixin(myBaseClass) {...}
 #### ES6模块 CommonJS模块
     差异： CommonJS模块输出的一个值的复制，ES6模块输出的值的引用
-          CommonJS是运行时加载，ES6模块是编译时输出接口
+          CommonJS是运行时加载，ES6模块是编译时输出接口 - 动态加载应用
+    
+    说明： 遇到循环加载的问题时：返回当前加载文件已经执行的部分，而不是全部执行后的值
      
