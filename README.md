@@ -389,3 +389,12 @@
      
      使用： classDistributeEdit extends mix(loggable, serialzable) {...}
      
+#### 修饰器 decorator 
+      Mixin 模式：对象继承的一种替代方案
+      实现：a) 在原型上增加修饰内容
+           b) 在子类和父类间增加混入类
+           
+           let myMixin = (superclass) => class extends superClass {...} 
+           
+           class myClass extends myMixin(myBaseClass) {...}
+     
