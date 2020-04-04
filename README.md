@@ -397,4 +397,7 @@
            let myMixin = (superclass) => class extends superClass {...} 
            
            class myClass extends myMixin(myBaseClass) {...}
+#### ES6模块 CommonJS模块
+    差异： CommonJS模块输出的一个值的复制，ES6模块输出的值的引用
+          CommonJS是运行时加载，ES6模块是编译时输出接口
      
