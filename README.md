@@ -468,5 +468,5 @@
     6. 发送 -- 缓存将响应发送给客户端
     7. 日志 -- 缓存可选的创建一个日志文件条目来描述这个事务
 
-   ![image](https://github.com/upgrace/high_study/raw/master/static/%E7%BC%93%E5%AD%98.png)
+   ![image](https://github.com/upgrace/high_study/raw/master/static/cache_flow.png)
     
