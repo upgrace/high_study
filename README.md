@@ -469,4 +469,18 @@
     7. 日志 -- 缓存可选的创建一个日志文件条目来描述这个事务
 
    ![image](https://github.com/upgrace/high_study/raw/master/static/cache_flow.png)
+   
+### 文档命中率和字节命中率
+    字节命中率表示的是缓存提供的字节在传输的所有字节中所占的比例；文档命中率表示的是缓存提供的文档在所有文档中所占的比例；
+    字节命中率 对节省带宽很有利；文档命中率对降低整体时延很有好处
+    
+### 缓存header中判断字段 -- 
+    1) expries/ cache-control:no-store, no-cache, max-age, must-revalidate -- 描述文档过期
+         no-store: 禁止缓存对响应进行复制，直接发给客户端
+         no-cache: 可以存储在本地的缓存区，但是在与原始服务器进行新鲜度检验之前不能提供给客户端使用
+         must-revalidate: 可以提供一些陈旧的对象,提高性能，但是在与服务器进行新鲜度检验期不能提供陈旧副本
+    2) etags/ if-none-match
+    
+    3) last-modified/ if-modified-since
+    
     
