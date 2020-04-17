@@ -467,6 +467,6 @@
     5. 创建相应 -- 缓存会用新的首部和已缓存的主体来构建一条相应报文
     6. 发送 -- 缓存将响应发送给客户端
     7. 日志 -- 缓存可选的创建一个日志文件条目来描述这个事务
-    
-   ![image](https://github.com/upgrace/high_study/master/static/缓存.png)
+
+   ![image](https://github.com/upgrace/high_study/blob/master/static/%E7%BC%93%E5%AD%98.png)
     
