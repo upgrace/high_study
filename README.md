@@ -444,6 +444,7 @@
               referer check: 请求来源限制，此种方法成本最低，但是并不能保证 100% 有效，因为服务器并不是什么时候都能取到 Referer，而且低版本的浏
               览器存在伪造 Referer 的风险。
               token验证: 目前最合适的方案
+              SameSite属性：strict-- 严格的同源请求, lax -- a、link, get 表单可以发送cookie, none
               
         https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CSP
 
@@ -519,4 +520,6 @@
     4. 胖URL， 一种在URL中嵌入识别信息的技术 -- 无法共享、破话缓存、额外的服务器负荷
     5.cookie 一种功能强大且高效的持久身份识别技术
     基本思想: 让浏览器积累一组服务器特有的信息，每次访问服务器时都将这些信息提供给它
-      
+    说明: 响应中set-cookie首部要特别小心,如果向多个用户set-cookie首部，可能会破坏用户的定位。 
+         比较好的方法： cache-contorl: must-revalidate, max-age = 0;
+  
