@@ -528,3 +528,23 @@
     优点：提升页面首次加载的速度
     1. 缓解服务器可能出现的访问拥赛问题
     2. 将数据缓存在离用户最近的地方，减少距离时延等，用户以最快的速度获取
+
+
+### 函数柯里化
+    定义: 把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术
+    应用： add(1, 2, 3) => add(1)(2)(3)
+    
+    function add (a) {
+    var res = 0, args = [].slice.call(arguments);
+    function sum () {
+      args = args.concat([].slice.call(arguments))
+      res = args.reduce(function (a, b) { return a + b}, 0)
+      return sum
+    }
+
+    sum.toString = function () {
+      return res
+    }
+    return sum
+  }
+    
