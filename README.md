@@ -535,16 +535,18 @@
     应用： add(1, 2, 3) => add(1)(2)(3)
     
     function add (a) {
-    var res = 0, args = [].slice.call(arguments);
-    function sum () {
-      args = args.concat([].slice.call(arguments))
-      res = args.reduce(function (a, b) { return a + b}, 0)
-      return sum
-    }
+        var args = [].slice.call(arguments);
 
-    sum.toString = function () {
-      return res
-    }
-    return sum
+        function sum () {
+          args = args.concat([].slice.call(arguments))
+          return sum
+        }
+
+        sum.toString = function () {
+          return args.reduce(function (a, b) { return a + b}, 0)
+        }
+        return sum
   }
+
+  add(3, 3)(3, 3)(3, 3)
     
