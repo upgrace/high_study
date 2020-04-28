@@ -15,7 +15,10 @@
 
 [正则表达式](https://github.com/upgrace/high_study/issues/34#issue-608072914)
 
+[服务器渲染的优缺点](https://github.com/upgrace/high_study/issues/35#issue-608256231)
+
 ### js基础相关           
+
 [浅拷贝和深拷贝的实现](https://github.com/upgrace/high_study/issues/8#issue-608047920)
 
 [null 与 undefined 的区别](https://github.com/upgrace/high_study/issues/9#issue-608048942)
