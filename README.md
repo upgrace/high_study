@@ -1,4 +1,7 @@
 # 作为高级前端不能不知道的知识点
+### 开发中实际案例
+[css 布局对齐问题](https://github.com/upgrace/high_study/issues/2#issue-608028496)
+
 ### js 执行环境及执行栈
     https://segmentfault.com/a/1190000017890535
 ### js 事件循环机制
