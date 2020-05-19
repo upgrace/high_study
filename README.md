@@ -36,6 +36,8 @@
 [CSRF 及 XSS 攻击](https://github.com/upgrace/high_study/issues/23#issue-608061605)
 
 [修饰器](https://github.com/upgrace/high_study/issues/32#issue-608072008)
+
+[var 与 非 var 区别](https://github.com/upgrace/high_study/issues/36#issue-620799220)
       
 ### ES6 新特性或思想
 [尾调用](https://github.com/upgrace/high_study/issues/15#issue-608053954)
