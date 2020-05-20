@@ -74,5 +74,14 @@
 
 ### 高阶函数的使用
 [柯里化](https://github.com/upgrace/high_study/issues/29#issue-608068202)
+
+
+### VUE 全家桶
+
+[vue 原理]()
+
+[vuex 使用](https://github.com/upgrace/high_study/issues/37#issue-621687773)
+
+[vue-router 原理]()
     
      
