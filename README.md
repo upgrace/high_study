@@ -2,6 +2,12 @@
 ### 开发中实际案例
 [css 布局对齐问题](https://github.com/upgrace/high_study/issues/2#issue-608028496)
 
+[幽灵节点](https://github.com/upgrace/high_study/issues/38#issue-622317078)
+
+[ajax重复请求问题](https://github.com/upgrace/high_study/issues/39#issue-622318371)
+
+[跨域iframe信息交流](https://github.com/upgrace/high_study/issues/40#issue-622322508)
+
 ### js 事件、存储相关
 [执行环境及执行栈](https://github.com/upgrace/high_study/issues/3#issue-608044559)
 
