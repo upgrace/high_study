@@ -89,5 +89,9 @@
 [vuex 使用](https://github.com/upgrace/high_study/issues/37#issue-621687773)
 
 [vue-router 原理](https://github.com/upgrace/high_study/issues/41#issue-623123405)
+
+
+### JS核心原理
+[delete操作](https://github.com/upgrace/high_study/issues/42#issue-624203284)
     
      
