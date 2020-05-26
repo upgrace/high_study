@@ -94,4 +94,4 @@
 ### JS核心原理
 [delete操作](https://github.com/upgrace/high_study/issues/42#issue-624203284)
     
-     
+[for循环并不比函数递归节省空间](https://github.com/upgrace/high_study/issues/43#issue-624625197)     
