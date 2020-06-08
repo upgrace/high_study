@@ -8,6 +8,7 @@
 
 [跨域iframe信息交流](https://github.com/upgrace/high_study/issues/40#issue-622322508)
 
+
 ### js 事件、存储相关
 [执行环境及执行栈](https://github.com/upgrace/high_study/issues/3#issue-608044559)
 
@@ -22,6 +23,7 @@
 [正则表达式](https://github.com/upgrace/high_study/issues/34#issue-608072914)
 
 [服务器渲染的优缺点](https://github.com/upgrace/high_study/issues/35#issue-608256231)
+
 
 ### js基础相关           
 
@@ -44,6 +46,7 @@
 [修饰器](https://github.com/upgrace/high_study/issues/32#issue-608072008)
 
 [var 与 非 var 区别](https://github.com/upgrace/high_study/issues/36#issue-620799220)
+
       
 ### ES6 新特性或思想
 [尾调用](https://github.com/upgrace/high_study/issues/15#issue-608053954)
@@ -78,6 +81,7 @@
 
 [CDN](https://github.com/upgrace/high_study/issues/28#issue-608067266)
 
+
 ### 高阶函数的使用
 [柯里化](https://github.com/upgrace/high_study/issues/29#issue-608068202)
 
@@ -94,4 +98,8 @@
 ### JS核心原理
 [delete操作](https://github.com/upgrace/high_study/issues/42#issue-624203284)
     
-[for循环并不比函数递归节省空间](https://github.com/upgrace/high_study/issues/43#issue-624625197)     
+[for循环并不比函数递归节省空间](https://github.com/upgrace/high_study/issues/43#issue-624625197)  
+
+### node JS 学习
+
+[node 模块](https://github.com/upgrace/high_study/issues/44#issue-634236948)   
